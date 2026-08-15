@@ -3,7 +3,10 @@
     "dashboard": "Dashboard",
     "plants": "Plantas",
     "devices": "Dispositivos",
-    "logout": "Sair"
+    "logout": "Sair",
+    "menu": "Abrir menu",
+    "toggle_theme": "Alternar tema",
+    "toggle_language": "Alternar idioma"
   },
   "auth": {
     "login": "Entrar",
@@ -86,5 +89,15 @@
   "pages": {
     "plant_detail": "Detalhe da Planta",
     "device_detail": "Detalhe do Dispositivo"
+  },
+  "errors": {
+    "generic": "Ocorreu um erro. Tente novamente mais tarde.",
+    "data_unavailable": "Dados indisponíveis no momento.",
+    "api_error": "Erro de comunicação com o servidor.",
+    "load_plants": "Não foi possível carregar as plantas.",
+    "load_devices": "Não foi possível carregar os dispositivos.",
+    "load_detail": "Dados do dispositivo indisponíveis.",
+    "load_history": "Histórico indisponível — os dados podem estar em atualização.",
+    "load_plant_detail": "Não foi possível carregar os detalhes da planta."
   }
 }

@@ -51,9 +51,7 @@ function runMigrations(db: Database.Database) {
   `);
 
   const migrations = getMigrations();
-  const applied = db
-    .prepare('SELECT name FROM _migrations')
-    .all() as { name: string }[];
+  const applied = db.prepare('SELECT name FROM _migrations').all() as { name: string }[];
   const appliedNames = new Set(applied.map((m) => m.name));
 
   const insertMigration = db.prepare('INSERT INTO _migrations (name) VALUES (?)');

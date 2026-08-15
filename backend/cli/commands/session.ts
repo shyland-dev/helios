@@ -91,9 +91,7 @@ export function registerSessionCommands(program: Command) {
     .action(() => {
       const db = openDb();
 
-      const result = db
-        .prepare("UPDATE sessions SET revoked_at = datetime('now') WHERE revoked_at IS NULL")
-        .run();
+      const result = db.prepare("UPDATE sessions SET revoked_at = datetime('now') WHERE revoked_at IS NULL").run();
 
       if (result.changes === 0) {
         console.log('Nenhuma sessão ativa encontrada.');

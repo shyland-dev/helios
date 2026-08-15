@@ -132,7 +132,10 @@ export async function deviceRoutes(fastify: FastifyInstance) {
         },
       },
     },
-    async (request: FastifyRequest<{ Params: DeviceSnParams; Querystring: DeviceEnergyHistoryQuery }>, reply: FastifyReply) => {
+    async (
+      request: FastifyRequest<{ Params: DeviceSnParams; Querystring: DeviceEnergyHistoryQuery }>,
+      reply: FastifyReply,
+    ) => {
       const user = request.user as { sub: number };
       const { sn } = request.params;
       const { start_date, end_date, timezone, page, limit } = request.query;

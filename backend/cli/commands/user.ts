@@ -23,7 +23,9 @@ export function registerUserCommands(program: Command) {
     .description('Lista todos os usuários')
     .action(() => {
       const db = openDb();
-      const users = db.prepare('SELECT id, username, growatt_token_enc, created_at, updated_at FROM users ORDER BY id').all() as UserRow[];
+      const users = db
+        .prepare('SELECT id, username, growatt_token_enc, created_at, updated_at FROM users ORDER BY id')
+        .all() as UserRow[];
 
       if (users.length === 0) {
         console.log('Nenhum usuário cadastrado.');
@@ -79,8 +81,11 @@ export function registerUserCommands(program: Command) {
         growattTokenEnc = encrypt(opts.token, encKey);
       }
 
-      db.prepare('INSERT INTO users (username, password_hash, growatt_token_enc) VALUES (?, ?, ?)')
-        .run(opts.username, passwordHash, growattTokenEnc);
+      db.prepare('INSERT INTO users (username, password_hash, growatt_token_enc) VALUES (?, ?, ?)').run(
+        opts.username,
+        passwordHash,
+        growattTokenEnc,
+      );
 
       console.log(`✓ Usuário "${opts.username}" criado com sucesso.`);
       if (growattTokenEnc) console.log('  Token Growatt encriptado e salvo.');
@@ -94,7 +99,9 @@ export function registerUserCommands(program: Command) {
     .action((username: string) => {
       const db = openDb();
 
-      const existing = db.prepare('SELECT id FROM users WHERE username = ?').get(username) as { id: number } | undefined;
+      const existing = db.prepare('SELECT id FROM users WHERE username = ?').get(username) as
+        | { id: number }
+        | undefined;
       if (!existing) {
         console.error(`✗ Erro: Usuário "${username}" não encontrado.`);
         db.close();
@@ -102,8 +109,9 @@ export function registerUserCommands(program: Command) {
       }
 
       // Revogar sessões do usuário antes de deletar
-      db.prepare("UPDATE sessions SET revoked_at = datetime('now') WHERE user_id = ? AND revoked_at IS NULL")
-        .run(existing.id);
+      db.prepare("UPDATE sessions SET revoked_at = datetime('now') WHERE user_id = ? AND revoked_at IS NULL").run(
+        existing.id,
+      );
 
       db.prepare('DELETE FROM users WHERE id = ?').run(existing.id);
 

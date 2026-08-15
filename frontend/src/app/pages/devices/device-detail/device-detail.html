@@ -14,7 +14,7 @@
     </div>
   } @else if (error()) {
     <div class="device-detail__error">
-      <p>{{ error() }}</p>
+      <p>{{ error() | translate }}</p>
     </div>
   } @else {
     <section class="device-detail__section">

@@ -5,7 +5,7 @@
     </div>
   } @else if (error()) {
     <div class="plant-detail__error">
-      <p>{{ error() }}</p>
+      <p>{{ error() | translate }}</p>
     </div>
   } @else {
     <!-- Energy Overview -->
@@ -15,27 +15,27 @@
         <div class="plant-detail__cards">
           <div class="energy-card">
             <span class="energy-card__label">{{ 'plant_detail.current_power' | translate }}</span>
-            <span class="energy-card__value">{{ overview.current_power }} W</span>
+            <span class="energy-card__value">{{ overview.current_power | formatNumber }} W</span>
           </div>
           <div class="energy-card">
             <span class="energy-card__label">{{ 'plant_detail.today_energy' | translate }}</span>
-            <span class="energy-card__value">{{ overview.today_energy }} kWh</span>
+            <span class="energy-card__value">{{ overview.today_energy | formatNumber }} kWh</span>
           </div>
           <div class="energy-card">
             <span class="energy-card__label">{{ 'plant_detail.monthly_energy' | translate }}</span>
-            <span class="energy-card__value">{{ overview.monthly_energy }} kWh</span>
+            <span class="energy-card__value">{{ overview.monthly_energy | formatNumber }} kWh</span>
           </div>
           <div class="energy-card">
             <span class="energy-card__label">{{ 'plant_detail.yearly_energy' | translate }}</span>
-            <span class="energy-card__value">{{ overview.yearly_energy }} kWh</span>
+            <span class="energy-card__value">{{ overview.yearly_energy | formatNumber }} kWh</span>
           </div>
           <div class="energy-card">
             <span class="energy-card__label">{{ 'plant_detail.total_energy' | translate }}</span>
-            <span class="energy-card__value">{{ overview.total_energy }} kWh</span>
+            <span class="energy-card__value">{{ overview.total_energy | formatNumber }} kWh</span>
           </div>
           <div class="energy-card">
             <span class="energy-card__label">{{ 'plant_detail.carbon_offset' | translate }}</span>
-            <span class="energy-card__value">{{ overview.carbon_offset }} kg</span>
+            <span class="energy-card__value">{{ overview.carbon_offset | formatNumber }} kg</span>
           </div>
           <div class="energy-card energy-card--wide">
             <span class="energy-card__label">{{ 'plant_detail.last_update' | translate }}</span>
@@ -61,14 +61,14 @@
               @for (entry of energyHistory(); track entry.date) {
                 <tr>
                   <td>{{ entry.date }}</td>
-                  <td>{{ entry.energy }} kWh</td>
+                  <td>{{ entry.energy | formatNumber }} kWh</td>
                 </tr>
               }
             </tbody>
           </table>
         </div>
       } @else {
-        <p class="plant-detail__empty">—</p>
+        <p class="plant-detail__empty">{{ 'errors.load_history' | translate }}</p>
       }
     </section>
 

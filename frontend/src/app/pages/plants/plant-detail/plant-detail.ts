@@ -5,6 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
 import { forkJoin, of, catchError } from 'rxjs';
 
+import { FormatNumberPipe } from '@helios';
+
 interface PlantEnergyOverview {
   peak_power_actual: number;
   monthly_energy: string;
@@ -53,7 +55,7 @@ interface DevicesResponse {
 @Component({
   selector: 'hls-plant-detail',
   standalone: true,
-  imports: [RouterLink, TranslateModule],
+  imports: [RouterLink, TranslateModule, FormatNumberPipe],
   templateUrl: './plant-detail.html',
   styleUrl: './plant-detail.scss',
 })
@@ -122,14 +124,14 @@ export class PlantDetail implements OnInit {
 
         // Se nenhum request teve sucesso, mostrar erro
         if (!responses.energy && !responses.devices) {
-          this.error.set('Erro ao carregar detalhes da planta.');
+          this.error.set('errors.load_plant_detail');
         }
 
         this.loading.set(false);
       },
       error: (err) => {
         this.debugService.log(this, 'unexpected error', err);
-        this.error.set('Erro inesperado ao carregar detalhes da planta.');
+        this.error.set('errors.generic');
         this.loading.set(false);
       },
     });

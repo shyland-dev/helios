@@ -44,12 +44,16 @@ async function main() {
   await app.register(deviceRoutes, { prefix: '/api/devices' });
 
   // Health check
-  app.get('/api/health', {
-    schema: {
-      tags: ['Health'],
-      summary: 'Health check',
+  app.get(
+    '/api/health',
+    {
+      schema: {
+        tags: ['Health'],
+        summary: 'Health check',
+      },
     },
-  }, async () => ({ status: 'ok', timestamp: new Date().toISOString() }));
+    async () => ({ status: 'ok', timestamp: new Date().toISOString() }),
+  );
 
   // Start
   try {

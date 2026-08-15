@@ -29,9 +29,9 @@ export class GrowattService {
 
   // Decripta o token Growatt do usuário armazenado no banco
   private getUserToken(userId: number): string {
-    const row = this.db
-      .prepare('SELECT growatt_token_enc FROM users WHERE id = ?')
-      .get(userId) as { growatt_token_enc: string | null } | undefined;
+    const row = this.db.prepare('SELECT growatt_token_enc FROM users WHERE id = ?').get(userId) as
+      | { growatt_token_enc: string | null }
+      | undefined;
 
     if (!row?.growatt_token_enc) {
       throw new GrowattServiceError('Token Growatt não configurado para este usuário', 'NO_TOKEN');
@@ -41,7 +41,11 @@ export class GrowattService {
   }
 
   // Faz request à Growatt API com token do usuário
-  private async fetchFromGrowatt<T>(token: string, endpoint: string, params: Record<string, string>): Promise<GrowattApiResponse<T>> {
+  private async fetchFromGrowatt<T>(
+    token: string,
+    endpoint: string,
+    params: Record<string, string>,
+  ): Promise<GrowattApiResponse<T>> {
     const url = new URL(endpoint, this.baseUrl.endsWith('/') ? this.baseUrl : this.baseUrl + '/');
     for (const [key, value] of Object.entries(params)) {
       url.searchParams.set(key, value);
@@ -56,10 +60,7 @@ export class GrowattService {
     });
 
     if (!response.ok) {
-      throw new GrowattServiceError(
-        `Growatt API retornou HTTP ${response.status}`,
-        'HTTP_ERROR',
-      );
+      throw new GrowattServiceError(`Growatt API retornou HTTP ${response.status}`, 'HTTP_ERROR');
     }
 
     // A Growatt pode retornar JSON com content-type text/html — tentar parsear sempre

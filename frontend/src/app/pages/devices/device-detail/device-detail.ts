@@ -74,7 +74,7 @@ export class DeviceDetail implements OnInit {
       },
       error: (err) => {
         this.debugService.log(this, 'error loading detail', err);
-        this.error.set(err.error?.error ?? 'Erro ao carregar detalhes do dispositivo.');
+        this.error.set('errors.load_detail');
         this.loading.set(false);
       },
     });

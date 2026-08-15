@@ -57,9 +57,9 @@ export async function authRoutes(fastify: FastifyInstance) {
       }
 
       // Verificar se o username já existe
-      const existingUser = fastify.db
-        .prepare('SELECT id FROM users WHERE username = ?')
-        .get(username) as { id: number } | undefined;
+      const existingUser = fastify.db.prepare('SELECT id FROM users WHERE username = ?').get(username) as
+        | { id: number }
+        | undefined;
 
       if (existingUser) {
         return reply.status(409).send({ error: 'Nome de usuário já existe' });
@@ -78,13 +78,9 @@ export async function authRoutes(fastify: FastifyInstance) {
 
       // Criar sessão e gerar JWT
       const jti = fastify.generateJti();
-      fastify.db
-        .prepare('INSERT INTO sessions (user_id, jti) VALUES (?, ?)')
-        .run(userId, jti);
+      fastify.db.prepare('INSERT INTO sessions (user_id, jti) VALUES (?, ?)').run(userId, jti);
 
-      const token = fastify.jwt.sign(
-        { sub: userId, username, jti },
-      );
+      const token = fastify.jwt.sign({ sub: userId, username, jti });
 
       return reply.status(201).send({
         token,
@@ -117,13 +113,9 @@ export async function authRoutes(fastify: FastifyInstance) {
 
       // Criar sessão e gerar JWT
       const jti = fastify.generateJti();
-      fastify.db
-        .prepare('INSERT INTO sessions (user_id, jti) VALUES (?, ?)')
-        .run(user.id, jti);
+      fastify.db.prepare('INSERT INTO sessions (user_id, jti) VALUES (?, ?)').run(user.id, jti);
 
-      const token = fastify.jwt.sign(
-        { sub: user.id, username: user.username, jti },
-      );
+      const token = fastify.jwt.sign({ sub: user.id, username: user.username, jti });
 
       return reply.status(200).send({
         token,

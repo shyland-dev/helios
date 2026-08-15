@@ -20,9 +20,7 @@ export class InviteCodeService {
   // Gerar novo código de convite
   create(createdBy: number): InviteCode {
     const code = randomUUID();
-    const stmt = this.db.prepare(
-      'INSERT INTO invite_codes (code, created_by) VALUES (?, ?)',
-    );
+    const stmt = this.db.prepare('INSERT INTO invite_codes (code, created_by) VALUES (?, ?)');
     const result = stmt.run(code, createdBy);
 
     return this.db.prepare('SELECT * FROM invite_codes WHERE id = ?').get(result.lastInsertRowid) as InviteCode;
@@ -30,9 +28,9 @@ export class InviteCodeService {
 
   // Validar e consumir um código de convite
   consume(code: string, usedBy: number): boolean {
-    const invite = this.db
-      .prepare('SELECT * FROM invite_codes WHERE code = ? AND used_by IS NULL')
-      .get(code) as InviteCode | undefined;
+    const invite = this.db.prepare('SELECT * FROM invite_codes WHERE code = ? AND used_by IS NULL').get(code) as
+      | InviteCode
+      | undefined;
 
     if (!invite) return false;
 
@@ -45,9 +43,9 @@ export class InviteCodeService {
 
   // Verificar se um código é válido (disponível)
   isValid(code: string): boolean {
-    const invite = this.db
-      .prepare('SELECT id FROM invite_codes WHERE code = ? AND used_by IS NULL')
-      .get(code) as { id: number } | undefined;
+    const invite = this.db.prepare('SELECT id FROM invite_codes WHERE code = ? AND used_by IS NULL').get(code) as
+      | { id: number }
+      | undefined;
 
     return !!invite;
   }

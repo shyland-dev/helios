@@ -3,7 +3,10 @@
     "dashboard": "Dashboard",
     "plants": "Plants",
     "devices": "Devices",
-    "logout": "Logout"
+    "logout": "Logout",
+    "menu": "Open menu",
+    "toggle_theme": "Toggle theme",
+    "toggle_language": "Toggle language"
   },
   "auth": {
     "login": "Sign in",
@@ -86,5 +89,15 @@
   "pages": {
     "plant_detail": "Plant Detail",
     "device_detail": "Device Detail"
+  },
+  "errors": {
+    "generic": "An error occurred. Please try again later.",
+    "data_unavailable": "Data currently unavailable.",
+    "api_error": "Server communication error.",
+    "load_plants": "Could not load plants.",
+    "load_devices": "Could not load devices.",
+    "load_detail": "Device data unavailable.",
+    "load_history": "History unavailable — data may be updating.",
+    "load_plant_detail": "Could not load plant details."
   }
 }

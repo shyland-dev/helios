@@ -4,6 +4,8 @@ import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { DebugService } from '@shyland-dev/utils';
 
+import { FormatNumberPipe } from '@helios';
+
 interface Plant {
   plant_id: number;
   name: string;
@@ -26,7 +28,7 @@ interface PlantsResponse {
 @Component({
   selector: 'hls-plants',
   standalone: true,
-  imports: [RouterLink, TranslateModule],
+  imports: [RouterLink, TranslateModule, FormatNumberPipe],
   templateUrl: './plants.html',
   styleUrl: './plants.scss',
 })
@@ -52,7 +54,7 @@ export class Plants implements OnInit {
       },
       error: (err) => {
         this.debugService.log(this, 'error loading plants', err);
-        this.error.set(err.error?.error ?? 'Erro ao carregar plantas.');
+        this.error.set('errors.load_plants');
         this.loading.set(false);
       },
     });

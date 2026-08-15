@@ -10,10 +10,7 @@ import { registerSessionCommands } from './commands/session.js';
 
 const program = new Command();
 
-program
-  .name('helios')
-  .description('CLI de administração do Helios')
-  .version('0.0.1');
+program.name('helios').description('CLI de administração do Helios').version('0.0.1');
 
 registerUserCommands(program);
 registerInviteCommands(program);

@@ -7,7 +7,7 @@
     </div>
   } @else if (error()) {
     <div class="devices__error">
-      <p>{{ error() }}</p>
+      <p>{{ error() | translate }}</p>
     </div>
   } @else if (devices().length === 0) {
     <div class="devices__empty">

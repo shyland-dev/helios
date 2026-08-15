@@ -109,7 +109,10 @@ export async function plantRoutes(fastify: FastifyInstance) {
         },
       },
     },
-    async (request: FastifyRequest<{ Params: PlantIdParams; Querystring: EnergyHistoryQuery }>, reply: FastifyReply) => {
+    async (
+      request: FastifyRequest<{ Params: PlantIdParams; Querystring: EnergyHistoryQuery }>,
+      reply: FastifyReply,
+    ) => {
       const user = request.user as { sub: number };
       const { id } = request.params;
       const { start_date, end_date, time_unit, page, perpage } = request.query;

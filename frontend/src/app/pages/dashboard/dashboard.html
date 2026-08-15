@@ -7,7 +7,7 @@
     </div>
   } @else if (error()) {
     <div class="dashboard__error">
-      <p>{{ error() }}</p>
+      <p>{{ error() | translate }}</p>
     </div>
   } @else if (plants().length === 0) {
     <div class="dashboard__empty">
@@ -21,11 +21,11 @@
           <div class="plant-card__stats">
             <div class="plant-card__stat">
               <span class="plant-card__label">{{ 'dashboard.current_power' | translate }}</span>
-              <span class="plant-card__value">{{ plant.current_power }} W</span>
+              <span class="plant-card__value">{{ plant.current_power | formatNumber }} W</span>
             </div>
             <div class="plant-card__stat">
               <span class="plant-card__label">{{ 'dashboard.total_energy' | translate }}</span>
-              <span class="plant-card__value">{{ plant.total_energy }} kWh</span>
+              <span class="plant-card__value">{{ plant.total_energy | formatNumber }} kWh</span>
             </div>
           </div>
           <div class="plant-card__status" [class.plant-card__status--online]="plant.status === 1">

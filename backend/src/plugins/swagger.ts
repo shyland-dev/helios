@@ -12,9 +12,7 @@ async function swaggerPluginFn(fastify: FastifyInstance) {
         description: 'API do painel de monitoramento solar Helios — Growatt Open API proxy com cache inteligente',
         version: '0.0.1',
       },
-      servers: [
-        { url: 'http://localhost:3000', description: 'Desenvolvimento' },
-      ],
+      servers: [{ url: 'http://localhost:3000', description: 'Desenvolvimento' }],
       components: {
         securitySchemes: {
           bearerAuth: {

@@ -93,7 +93,7 @@ export class Devices implements OnInit {
         },
         error: (err) => {
           this.debugService.log(this, 'error loading devices', err);
-          this.error.set(err.error?.error ?? 'Erro ao carregar dispositivos.');
+          this.error.set('errors.load_devices');
           this.loading.set(false);
         },
       });
