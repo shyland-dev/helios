@@ -3,7 +3,7 @@ FROM node:24-alpine
 
 WORKDIR /app
 
-# Instalar dependências
+# Instalar dependências (--ignore-scripts: postinstall é desnecessário no container)
 COPY package.json package-lock.json ./
 RUN npm ci --ignore-scripts
 
@@ -13,4 +13,4 @@ COPY . .
 # Angular dev server com host 0.0.0.0 (acessível fora do container)
 EXPOSE 4200
 
-CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--poll", "2000", "--proxy-config", "proxy.conf.docker.json"]
+CMD ["node", "scripts/load-env.mjs", "npx", "ng", "serve", "--host", "0.0.0.0", "--poll", "2000", "--proxy-config", "proxy.conf.docker.json"]
