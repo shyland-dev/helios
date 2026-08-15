@@ -21,9 +21,7 @@
       <h3 class="device-detail__section-title">{{ 'device_detail.realtime' | translate }}</h3>
 
       @if (detail()?.time) {
-        <p class="device-detail__last-update">
-          {{ 'device_detail.last_update' | translate }}: {{ detail()!.time }}
-        </p>
+        <p class="device-detail__last-update">{{ 'device_detail.last_update' | translate }}: {{ detail()!.time }}</p>
       }
 
       <div class="device-detail__grid">

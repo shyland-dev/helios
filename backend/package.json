@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Helios backend API — Fastify + TypeScript + SQLite",
   "engines": {
-    "node": "24.19.0"
+    "node": "24"
   },
   "type": "module",
   "scripts": {

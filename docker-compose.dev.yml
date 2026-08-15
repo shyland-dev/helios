@@ -16,6 +16,7 @@ services:
     volumes:
       - ./frontend/src:/app/src
       - ./frontend/public:/app/public
+      - ./frontend/proxy.conf.docker.json:/app/proxy.conf.docker.json
     environment:
       - NODE_ENV=development
     depends_on:

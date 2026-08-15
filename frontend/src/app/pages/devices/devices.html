@@ -35,10 +35,7 @@
               <span class="device-card__value">{{ device.last_update_time }}</span>
             </div>
           </div>
-          <div
-            class="device-card__status"
-            [class.device-card__status--online]="device.status === 1 && !device.lost"
-          >
+          <div class="device-card__status" [class.device-card__status--online]="device.status === 1 && !device.lost">
             {{ device.status === 1 && !device.lost ? ('devices.online' | translate) : ('devices.offline' | translate) }}
           </div>
         </a>

@@ -13,4 +13,4 @@ COPY . .
 # Angular dev server com host 0.0.0.0 (acessível fora do container)
 EXPOSE 4200
 
-CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--poll", "2000"]
+CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--poll", "2000", "--proxy-config", "proxy.conf.docker.json"]

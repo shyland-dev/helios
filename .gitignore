@@ -55,13 +55,11 @@ frontend/coverage/
 frontend/public/assets/version.json
 frontend/src/lib/environments/version.ts
 frontend/src/lib/environments/environment.ts
-frontend/package-lock.json
 
 # Backend specifics
 backend/node_modules/
 backend/dist/
 backend/coverage/
-backend/package-lock.json
 backend/data/
 
 # Docker volumes
