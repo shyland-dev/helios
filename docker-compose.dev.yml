@@ -1,0 +1,53 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# Helios — Docker Compose (Desenvolvimento)
+# Hot-reload para frontend e backend, ports expostas para debugging
+#
+# Uso: docker compose -f docker-compose.dev.yml up
+# ═══════════════════════════════════════════════════════════════════════════════
+
+services:
+  helios-web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: helios-web-dev
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - helios-api
+    networks:
+      - helios-net-dev
+
+  helios-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    container_name: helios-api-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend/src:/app/src
+      - ./backend/cli:/app/cli
+      - helios-data-dev:/app/data
+    env_file:
+      - .env
+    environment:
+      - HELIOS_DB_PATH=/app/data/helios.db
+      - HELIOS_API_PORT=3000
+      - HELIOS_API_HOST=0.0.0.0
+      - NODE_ENV=development
+    networks:
+      - helios-net-dev
+
+volumes:
+  helios-data-dev:
+    driver: local
+
+networks:
+  helios-net-dev:
+    driver: bridge

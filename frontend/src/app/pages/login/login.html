@@ -1,0 +1,49 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <h1 class="auth-card__title">Helios</h1>
+    <p class="auth-card__subtitle">{{ 'auth.login_subtitle' | translate }}</p>
+
+    <form class="auth-form" (ngSubmit)="onSubmit()">
+      @if (error()) {
+        <div class="auth-form__error">{{ error() }}</div>
+      }
+
+      <div class="auth-form__field">
+        <label for="username">{{ 'auth.username' | translate }}</label>
+        <input
+          id="username"
+          type="text"
+          [(ngModel)]="username"
+          name="username"
+          autocomplete="username"
+          [disabled]="loading()"
+        />
+      </div>
+
+      <div class="auth-form__field">
+        <label for="password">{{ 'auth.password' | translate }}</label>
+        <input
+          id="password"
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          autocomplete="current-password"
+          [disabled]="loading()"
+        />
+      </div>
+
+      <button class="auth-form__submit" type="submit" [disabled]="loading()">
+        @if (loading()) {
+          {{ 'auth.loading' | translate }}
+        } @else {
+          {{ 'auth.login' | translate }}
+        }
+      </button>
+    </form>
+
+    <p class="auth-card__footer">
+      {{ 'auth.no_account' | translate }}
+      <a routerLink="/register">{{ 'auth.create_account' | translate }}</a>
+    </p>
+  </div>
+</div>

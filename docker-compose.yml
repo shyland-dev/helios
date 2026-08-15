@@ -1,0 +1,52 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# Helios — Docker Compose (Produção)
+# 3 serviços: helios-web (Angular+Nginx), helios-api (Fastify), helios-db (volume SQLite)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+services:
+  helios-web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: helios-web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      helios-api:
+        condition: service_healthy
+    networks:
+      - helios-net
+
+  helios-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: helios-api
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - HELIOS_DB_PATH=/app/data/helios.db
+      - HELIOS_API_PORT=3000
+      - HELIOS_API_HOST=0.0.0.0
+    volumes:
+      - helios-data:/app/data
+    expose:
+      - "3000"
+    networks:
+      - helios-net
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+
+volumes:
+  helios-data:
+    driver: local
+
+networks:
+  helios-net:
+    driver: bridge

@@ -1,0 +1,101 @@
+<div class="plant-detail">
+  @if (loading()) {
+    <div class="plant-detail__loading">
+      <p>{{ 'plant_detail.loading' | translate }}</p>
+    </div>
+  } @else if (error()) {
+    <div class="plant-detail__error">
+      <p>{{ error() }}</p>
+    </div>
+  } @else {
+    <!-- Energy Overview -->
+    @if (energyOverview(); as overview) {
+      <section class="plant-detail__section">
+        <h2 class="plant-detail__section-title">{{ 'plant_detail.energy_overview' | translate }}</h2>
+        <div class="plant-detail__cards">
+          <div class="energy-card">
+            <span class="energy-card__label">{{ 'plant_detail.current_power' | translate }}</span>
+            <span class="energy-card__value">{{ overview.current_power }} W</span>
+          </div>
+          <div class="energy-card">
+            <span class="energy-card__label">{{ 'plant_detail.today_energy' | translate }}</span>
+            <span class="energy-card__value">{{ overview.today_energy }} kWh</span>
+          </div>
+          <div class="energy-card">
+            <span class="energy-card__label">{{ 'plant_detail.monthly_energy' | translate }}</span>
+            <span class="energy-card__value">{{ overview.monthly_energy }} kWh</span>
+          </div>
+          <div class="energy-card">
+            <span class="energy-card__label">{{ 'plant_detail.yearly_energy' | translate }}</span>
+            <span class="energy-card__value">{{ overview.yearly_energy }} kWh</span>
+          </div>
+          <div class="energy-card">
+            <span class="energy-card__label">{{ 'plant_detail.total_energy' | translate }}</span>
+            <span class="energy-card__value">{{ overview.total_energy }} kWh</span>
+          </div>
+          <div class="energy-card">
+            <span class="energy-card__label">{{ 'plant_detail.carbon_offset' | translate }}</span>
+            <span class="energy-card__value">{{ overview.carbon_offset }} kg</span>
+          </div>
+          <div class="energy-card energy-card--wide">
+            <span class="energy-card__label">{{ 'plant_detail.last_update' | translate }}</span>
+            <span class="energy-card__value energy-card__value--secondary">{{ overview.last_update_time }}</span>
+          </div>
+        </div>
+      </section>
+    }
+
+    <!-- Energy History -->
+    <section class="plant-detail__section">
+      <h2 class="plant-detail__section-title">{{ 'plant_detail.energy_history' | translate }}</h2>
+      @if (energyHistory().length > 0) {
+        <div class="plant-detail__table-wrapper">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>{{ 'plant_detail.date' | translate }}</th>
+                <th>{{ 'plant_detail.energy' | translate }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (entry of energyHistory(); track entry.date) {
+                <tr>
+                  <td>{{ entry.date }}</td>
+                  <td>{{ entry.energy }} kWh</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      } @else {
+        <p class="plant-detail__empty">—</p>
+      }
+    </section>
+
+    <!-- Devices -->
+    <section class="plant-detail__section">
+      <h2 class="plant-detail__section-title">{{ 'plant_detail.devices' | translate }}</h2>
+      @if (devices().length > 0) {
+        <div class="plant-detail__devices">
+          @for (device of devices(); track device.device_sn) {
+            <a class="device-card" [routerLink]="['/devices', device.device_sn]">
+              <div class="device-card__info">
+                <span class="device-card__label">{{ 'plant_detail.device_sn' | translate }}</span>
+                <span class="device-card__value">{{ device.device_sn }}</span>
+              </div>
+              <div class="device-card__info">
+                <span class="device-card__label">{{ 'plant_detail.model' | translate }}</span>
+                <span class="device-card__value">{{ device.model }}</span>
+              </div>
+              <div class="device-card__status" [class.device-card__status--online]="device.status === 1">
+                {{ device.status === 1 ? ('plant_detail.online' | translate) : ('plant_detail.offline' | translate) }}
+              </div>
+            </a>
+          }
+        </div>
+      } @else {
+        <p class="plant-detail__empty">—</p>
+      }
+    </section>
+  }
+</div>

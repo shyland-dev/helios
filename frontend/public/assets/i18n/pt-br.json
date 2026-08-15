@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "plants": "Plantas",
+    "devices": "Dispositivos",
+    "logout": "Sair"
+  },
+  "auth": {
+    "login": "Entrar",
+    "register": "Criar conta",
+    "login_subtitle": "Faça login para acessar o painel",
+    "register_subtitle": "Crie sua conta com um código de convite",
+    "username": "Usuário",
+    "password": "Senha",
+    "invite_code": "Código de convite",
+    "loading": "Carregando...",
+    "no_account": "Não tem conta?",
+    "has_account": "Já tem conta?",
+    "create_account": "Criar conta"
+  },
+  "dashboard": {
+    "loading": "Carregando plantas...",
+    "no_plants": "Nenhuma planta encontrada.",
+    "current_power": "Potência atual",
+    "total_energy": "Energia total",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "plants": {
+    "loading": "Carregando plantas...",
+    "no_plants": "Nenhuma planta encontrada.",
+    "current_power": "Potência atual",
+    "total_energy": "Energia total",
+    "peak_power": "Potência de pico",
+    "city": "Cidade",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "plant_detail": {
+    "energy_overview": "Visão Geral de Energia",
+    "current_power": "Potência Atual",
+    "today_energy": "Energia Hoje",
+    "monthly_energy": "Energia Mensal",
+    "yearly_energy": "Energia Anual",
+    "total_energy": "Energia Total",
+    "carbon_offset": "Compensação CO₂",
+    "last_update": "Última Atualização",
+    "energy_history": "Histórico de Energia",
+    "date": "Data",
+    "energy": "Energia (kWh)",
+    "devices": "Dispositivos",
+    "device_sn": "Número de Série",
+    "model": "Modelo",
+    "loading": "Carregando...",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "devices": {
+    "loading": "Carregando dispositivos...",
+    "no_devices": "Nenhum dispositivo encontrado.",
+    "sn": "Número de Série",
+    "model": "Modelo",
+    "plant": "Planta",
+    "last_update": "Última Atualização",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "device_detail": {
+    "title": "Detalhe do Dispositivo",
+    "realtime": "Dados em Tempo Real",
+    "loading": "Carregando...",
+    "last_update": "Última atualização",
+    "ppv": "Potência PV",
+    "pac": "Potência AC",
+    "eac_today": "Energia Hoje",
+    "eac_total": "Energia Total",
+    "vpv1": "Tensão String 1",
+    "vpv2": "Tensão String 2",
+    "ipv1": "Corrente String 1",
+    "ipv2": "Corrente String 2",
+    "vac1": "Tensão AC",
+    "fac": "Frequência AC",
+    "temp": "Temperatura",
+    "op_percent": "Operação Real"
+  },
+  "pages": {
+    "plant_detail": "Detalhe da Planta",
+    "device_detail": "Detalhe do Dispositivo"
+  }
+}

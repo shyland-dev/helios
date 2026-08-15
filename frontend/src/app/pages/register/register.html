@@ -1,0 +1,62 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <h1 class="auth-card__title">Helios</h1>
+    <p class="auth-card__subtitle">{{ 'auth.register_subtitle' | translate }}</p>
+
+    <form class="auth-form" (ngSubmit)="onSubmit()">
+      @if (error()) {
+        <div class="auth-form__error">{{ error() }}</div>
+      }
+
+      <div class="auth-form__field">
+        <label for="invite_code">{{ 'auth.invite_code' | translate }}</label>
+        <input
+          id="invite_code"
+          type="text"
+          [(ngModel)]="inviteCode"
+          name="invite_code"
+          placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+          [disabled]="loading()"
+        />
+      </div>
+
+      <div class="auth-form__field">
+        <label for="username">{{ 'auth.username' | translate }}</label>
+        <input
+          id="username"
+          type="text"
+          [(ngModel)]="username"
+          name="username"
+          autocomplete="username"
+          [disabled]="loading()"
+        />
+      </div>
+
+      <div class="auth-form__field">
+        <label for="password">{{ 'auth.password' | translate }}</label>
+        <input
+          id="password"
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          autocomplete="new-password"
+          minlength="8"
+          [disabled]="loading()"
+        />
+      </div>
+
+      <button class="auth-form__submit" type="submit" [disabled]="loading()">
+        @if (loading()) {
+          {{ 'auth.loading' | translate }}
+        } @else {
+          {{ 'auth.register' | translate }}
+        }
+      </button>
+    </form>
+
+    <p class="auth-card__footer">
+      {{ 'auth.has_account' | translate }}
+      <a routerLink="/login">{{ 'auth.login' | translate }}</a>
+    </p>
+  </div>
+</div>

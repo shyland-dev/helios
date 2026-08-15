@@ -1,0 +1,16 @@
+# Helios Frontend — Desenvolvimento (hot-reload)
+FROM node:24-alpine
+
+WORKDIR /app
+
+# Instalar dependências
+COPY package.json package-lock.json ./
+RUN npm ci --ignore-scripts
+
+# Copiar código fonte
+COPY . .
+
+# Angular dev server com host 0.0.0.0 (acessível fora do container)
+EXPOSE 4200
+
+CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--poll", "2000"]

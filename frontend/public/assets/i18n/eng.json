@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "plants": "Plants",
+    "devices": "Devices",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": "Sign in",
+    "register": "Create account",
+    "login_subtitle": "Sign in to access the dashboard",
+    "register_subtitle": "Create your account with an invite code",
+    "username": "Username",
+    "password": "Password",
+    "invite_code": "Invite code",
+    "loading": "Loading...",
+    "no_account": "Don't have an account?",
+    "has_account": "Already have an account?",
+    "create_account": "Create account"
+  },
+  "dashboard": {
+    "loading": "Loading plants...",
+    "no_plants": "No plants found.",
+    "current_power": "Current power",
+    "total_energy": "Total energy",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "plants": {
+    "loading": "Loading plants...",
+    "no_plants": "No plants found.",
+    "current_power": "Current power",
+    "total_energy": "Total energy",
+    "peak_power": "Peak power",
+    "city": "City",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "plant_detail": {
+    "energy_overview": "Energy Overview",
+    "current_power": "Current Power",
+    "today_energy": "Today Energy",
+    "monthly_energy": "Monthly Energy",
+    "yearly_energy": "Yearly Energy",
+    "total_energy": "Total Energy",
+    "carbon_offset": "CO₂ Offset",
+    "last_update": "Last Update",
+    "energy_history": "Energy History",
+    "date": "Date",
+    "energy": "Energy (kWh)",
+    "devices": "Devices",
+    "device_sn": "Serial Number",
+    "model": "Model",
+    "loading": "Loading...",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "devices": {
+    "loading": "Loading devices...",
+    "no_devices": "No devices found.",
+    "sn": "Serial Number",
+    "model": "Model",
+    "plant": "Plant",
+    "last_update": "Last Update",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "device_detail": {
+    "title": "Device Detail",
+    "realtime": "Real-time Data",
+    "loading": "Loading...",
+    "last_update": "Last update",
+    "ppv": "PV Power",
+    "pac": "AC Power",
+    "eac_today": "Today Energy",
+    "eac_total": "Total Energy",
+    "vpv1": "String 1 Voltage",
+    "vpv2": "String 2 Voltage",
+    "ipv1": "String 1 Current",
+    "ipv2": "String 2 Current",
+    "vac1": "AC Voltage",
+    "fac": "AC Frequency",
+    "temp": "Temperature",
+    "op_percent": "Real Operation"
+  },
+  "pages": {
+    "plant_detail": "Plant Detail",
+    "device_detail": "Device Detail"
+  }
+}

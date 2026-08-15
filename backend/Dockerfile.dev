@@ -1,0 +1,23 @@
+# Helios Backend — Desenvolvimento (hot-reload)
+FROM node:24-alpine
+
+# Dependências para native addons (better-sqlite3, bcrypt)
+RUN apk add --no-cache python3 make g++
+
+WORKDIR /app
+
+# Instalar dependências
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Copiar código fonte
+COPY . .
+
+# Criar diretório de dados
+RUN mkdir -p /app/data
+
+# Expor porta
+EXPOSE 3000
+
+# tsx watch para hot-reload
+CMD ["npx", "tsx", "watch", "src/index.ts"]

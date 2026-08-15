@@ -1,0 +1,48 @@
+<div class="devices">
+  <h2 class="devices__title">{{ 'nav.devices' | translate }}</h2>
+
+  @if (loading()) {
+    <div class="devices__loading">
+      <p>{{ 'devices.loading' | translate }}</p>
+    </div>
+  } @else if (error()) {
+    <div class="devices__error">
+      <p>{{ error() }}</p>
+    </div>
+  } @else if (devices().length === 0) {
+    <div class="devices__empty">
+      <p>{{ 'devices.no_devices' | translate }}</p>
+    </div>
+  } @else {
+    <div class="devices__grid">
+      @for (device of devices(); track device.device_sn) {
+        <a class="device-card" [routerLink]="['/devices', device.device_sn]">
+          <h3 class="device-card__sn">
+            <span class="device-card__label">{{ 'devices.sn' | translate }}</span>
+            {{ device.device_sn }}
+          </h3>
+          <div class="device-card__info">
+            <div class="device-card__field">
+              <span class="device-card__label">{{ 'devices.model' | translate }}</span>
+              <span class="device-card__value">{{ device.model }}</span>
+            </div>
+            <div class="device-card__field">
+              <span class="device-card__label">{{ 'devices.plant' | translate }}</span>
+              <span class="device-card__value">{{ device.plant_name }}</span>
+            </div>
+            <div class="device-card__field">
+              <span class="device-card__label">{{ 'devices.last_update' | translate }}</span>
+              <span class="device-card__value">{{ device.last_update_time }}</span>
+            </div>
+          </div>
+          <div
+            class="device-card__status"
+            [class.device-card__status--online]="device.status === 1 && !device.lost"
+          >
+            {{ device.status === 1 && !device.lost ? ('devices.online' | translate) : ('devices.offline' | translate) }}
+          </div>
+        </a>
+      }
+    </div>
+  }
+</div>

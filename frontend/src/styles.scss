@@ -1,0 +1,111 @@
+@use '@shyland-dev/ui/styles' as *;
+
+// Estilos globais do Helios
+
+:root {
+  // Cores - Tema Light
+  --color-primary: #ff8c00;
+  --color-primary-dark: #e07b00;
+  --color-primary-light: #ffa940;
+  --color-secondary: #1a73e8;
+  --color-secondary-dark: #1557b0;
+  --color-background: #f5f5f5;
+  --color-surface: #ffffff;
+  --color-text: #1f1f1f;
+  --color-text-secondary: #5f6368;
+  --color-border: #dadce0;
+  --color-success: #34a853;
+  --color-warning: #fbbc04;
+  --color-error: #ea4335;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+
+  // Espaçamentos
+  --spacing-xs: calc(#{$responsive-unit} * 2);
+  --spacing-sm: calc(#{$responsive-unit} * 4);
+  --spacing-md: calc(#{$responsive-unit} * 8);
+  --spacing-lg: calc(#{$responsive-unit} * 12);
+  --spacing-xl: calc(#{$responsive-unit} * 16);
+  --spacing-xxl: calc(#{$responsive-unit} * 24);
+
+  // Tipografia
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-size-xs: calc(#{$responsive-unit} * 6);
+  --font-size-sm: calc(#{$responsive-unit} * 7);
+  --font-size-md: calc(#{$responsive-unit} * 8);
+  --font-size-lg: calc(#{$responsive-unit} * 10);
+  --font-size-xl: calc(#{$responsive-unit} * 12);
+  --font-size-xxl: calc(#{$responsive-unit} * 16);
+
+  // Bordas
+  --border-radius-sm: calc(#{$responsive-unit} * 2);
+  --border-radius-md: calc(#{$responsive-unit} * 4);
+  --border-radius-lg: calc(#{$responsive-unit} * 6);
+  --border-radius-xl: calc(#{$responsive-unit} * 8);
+
+  // Sombras
+  --shadow-sm: 0 calc(#{$responsive-unit} * 0.5) calc(#{$responsive-unit} * 1) var(--color-shadow);
+  --shadow-md: 0 calc(#{$responsive-unit} * 1) calc(#{$responsive-unit} * 4) var(--color-shadow);
+  --shadow-lg: 0 calc(#{$responsive-unit} * 2) calc(#{$responsive-unit} * 8) var(--color-shadow);
+
+  // Transições
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+}
+
+// Tema Dark
+[data-theme='dark'] {
+  --color-primary: #ffa940;
+  --color-primary-dark: #ff8c00;
+  --color-primary-light: #ffc069;
+  --color-secondary: #64b5f6;
+  --color-secondary-dark: #42a5f5;
+  --color-background: #1a1a1a;
+  --color-surface: #2d2d2d;
+  --color-text: #e8eaed;
+  --color-text-secondary: #9aa0a6;
+  --color-border: #3c4043;
+  --color-success: #81c995;
+  --color-warning: #fdd663;
+  --color-error: #f28b82;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
+// Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--color-secondary-dark);
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+}

@@ -1,0 +1,42 @@
+<div class="device-detail">
+  <div class="device-detail__header">
+    <h2 class="device-detail__title">{{ 'device_detail.title' | translate }} — {{ sn() }}</h2>
+    @if (deviceType()) {
+      <span class="device-detail__badge" [class.device-detail__badge--sph]="deviceType() === 'sph'">
+        {{ deviceType() | uppercase }}
+      </span>
+    }
+  </div>
+
+  @if (loading()) {
+    <div class="device-detail__loading">
+      <p>{{ 'device_detail.loading' | translate }}</p>
+    </div>
+  } @else if (error()) {
+    <div class="device-detail__error">
+      <p>{{ error() }}</p>
+    </div>
+  } @else {
+    <section class="device-detail__section">
+      <h3 class="device-detail__section-title">{{ 'device_detail.realtime' | translate }}</h3>
+
+      @if (detail()?.time) {
+        <p class="device-detail__last-update">
+          {{ 'device_detail.last_update' | translate }}: {{ detail()!.time }}
+        </p>
+      }
+
+      <div class="device-detail__grid">
+        @for (card of cards(); track card.label) {
+          <div class="data-card">
+            <span class="data-card__label">{{ card.label | translate }}</span>
+            <span class="data-card__value">
+              {{ card.value }}
+              <span class="data-card__unit">{{ card.unit }}</span>
+            </span>
+          </div>
+        }
+      </div>
+    </section>
+  }
+</div>

@@ -1,0 +1,24 @@
+# Angular
+frontend/.angular/
+frontend/coverage/
+frontend/dist/
+frontend/out-tsc/
+frontend/node_modules/
+frontend/public/assets/version.json
+frontend/src/lib/environments/version.ts
+frontend/src/lib/environments/environment.ts
+frontend/package-lock.json
+
+# Backend
+backend/node_modules/
+backend/dist/
+backend/coverage/
+backend/package-lock.json
+backend/data/
+
+# Docker
+data/
+
+# Misc
+node_modules/
+graphify-out/

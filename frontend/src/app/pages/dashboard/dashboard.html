@@ -1,0 +1,38 @@
+<div class="dashboard">
+  <h2 class="dashboard__title">{{ 'nav.dashboard' | translate }}</h2>
+
+  @if (loading()) {
+    <div class="dashboard__loading">
+      <p>{{ 'dashboard.loading' | translate }}</p>
+    </div>
+  } @else if (error()) {
+    <div class="dashboard__error">
+      <p>{{ error() }}</p>
+    </div>
+  } @else if (plants().length === 0) {
+    <div class="dashboard__empty">
+      <p>{{ 'dashboard.no_plants' | translate }}</p>
+    </div>
+  } @else {
+    <div class="dashboard__grid">
+      @for (plant of plants(); track plant.plant_id) {
+        <a class="plant-card" [routerLink]="['/plants', plant.plant_id]">
+          <h3 class="plant-card__name">{{ plant.name }}</h3>
+          <div class="plant-card__stats">
+            <div class="plant-card__stat">
+              <span class="plant-card__label">{{ 'dashboard.current_power' | translate }}</span>
+              <span class="plant-card__value">{{ plant.current_power }} W</span>
+            </div>
+            <div class="plant-card__stat">
+              <span class="plant-card__label">{{ 'dashboard.total_energy' | translate }}</span>
+              <span class="plant-card__value">{{ plant.total_energy }} kWh</span>
+            </div>
+          </div>
+          <div class="plant-card__status" [class.plant-card__status--online]="plant.status === 1">
+            {{ plant.status === 1 ? ('dashboard.online' | translate) : ('dashboard.offline' | translate) }}
+          </div>
+        </a>
+      }
+    </div>
+  }
+</div>
