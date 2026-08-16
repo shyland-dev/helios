@@ -1,16 +1,16 @@
-# Graph Report - helios  (2026-08-15)
+# Graph Report - helios  (2026-08-16)
 
 ## Corpus Check
-- 71 files · ~15,694 words
+- 72 files · ~15,721 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 580 nodes · 782 edges · 28 communities (22 shown, 6 thin omitted)
+- 582 nodes · 783 edges · 34 communities (25 shown, 9 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 24 edges (avg confidence: 0.77)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a1ddc9a5`
+- Built from commit: `340b51a3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,15 +28,21 @@
 - scripts
 - cli/index.ts
 - devices/devices.ts
-- App
+- lib/index.ts
 - routes/auth.ts
 - src/index.ts
 - environment.ts
-- lib/index.ts
+- routes/plants.ts
+- AuthService
+- plugins/auth.ts
 - tsconfig.app.json
 - CacheService
 - sync-version.mjs
+- plugins/db.ts
+- rate-limit.ts
+- security.ts
 - load-env.mjs
+- docker-entrypoint.sh
 - helios-api (Prod Service)
 - api-error-codes.const.ts
 - App Root Layout
@@ -75,7 +81,7 @@
 - **Solar Monitoring UI Pages** — frontend_src_app_pages_dashboard_dashboard, frontend_src_app_pages_plants_plants, frontend_src_app_pages_plants_plant_detail_plant_detail, frontend_src_app_pages_devices_devices, frontend_src_app_pages_devices_device_detail_device_detail [INFERRED 0.85]
 - **Docker Deployment Configuration** — docker_compose_helios_web, docker_compose_helios_api, docker_compose_dev_helios_web, docker_compose_dev_helios_api, readme_docker_compose_infra [EXTRACTED 1.00]
 
-## Communities (28 total, 6 thin omitted)
+## Communities (34 total, 9 thin omitted)
 
 ### Community 0 - "growatt-api.service.ts"
 Cohesion: 0.09
@@ -129,8 +135,8 @@ Nodes (13): InviteRow, registerInviteCommands(), UserRow, registerSessionCommand
 Cohesion: 0.12
 Nodes (13): DataCard, DetailResponse, DeviceDetail, EnergyResponse, MinDetail, Component, Device, Devices (+5 more)
 
-### Community 13 - "App"
-Cohesion: 0.06
+### Community 13 - "lib/index.ts"
+Cohesion: 0.05
 Nodes (20): App, appConfig, routes, Component, authGuard(), guestGuard(), AuthResponse, AuthUser (+12 more)
 
 ### Community 14 - "routes/auth.ts"
@@ -138,12 +144,20 @@ Cohesion: 0.15
 Nodes (8): authRoutes(), LoginBody, loginSchema, RegisterBody, registerSchema, UserRow, InviteCode, InviteCodeService
 
 ### Community 15 - "src/index.ts"
-Cohesion: 0.06
-Nodes (33): AppConfig, loadConfig(), optionalEnv(), requireEnv(), main(), authPlugin, AuthPluginOptions, fastify (+25 more)
+Cohesion: 0.25
+Nodes (10): AppConfig, loadConfig(), optionalEnv(), requireEnv(), main(), swaggerPlugin, DeviceEnergyHistoryQuery, deviceRoutes() (+2 more)
 
-### Community 18 - "lib/index.ts"
+### Community 17 - "routes/plants.ts"
+Cohesion: 0.18
+Nodes (6): EnergyHistoryQuery, PlantIdParams, GrowattApiResponse, GrowattService, GrowattServiceError, decrypt()
+
+### Community 18 - "AuthService"
 Cohesion: 0.07
 Nodes (22): Admin CLI Documentation, CLI Invite Commands, CLI Session Commands, CLI User Commands, Auth Endpoints, API Cache Strategy, Devices Endpoints, Plants Endpoints (+14 more)
+
+### Community 19 - "plugins/auth.ts"
+Cohesion: 0.25
+Nodes (6): authPlugin, AuthPluginOptions, fastify, @fastify/jwt, FastifyInstance, FastifyJWT
 
 ### Community 20 - "tsconfig.app.json"
 Cohesion: 0.20
@@ -152,6 +166,10 @@ Nodes (9): compilerOptions, outDir, types, exclude, extends, include, src/**/*.t
 ### Community 22 - "sync-version.mjs"
 Cohesion: 0.42
 Nodes (8): assertVersion(), main(), paths, readJson(), rootDir, syncPackageLockVersion(), syncVersionFiles(), writeJson()
+
+### Community 23 - "plugins/db.ts"
+Cohesion: 0.32
+Nodes (7): dbPlugin, dbPluginFn(), DbPluginOptions, fastify, FastifyInstance, getMigrations(), runMigrations()
 
 ### Community 26 - "load-env.mjs"
 Cohesion: 0.33
@@ -162,19 +180,19 @@ Cohesion: 0.50
 Nodes (5): helios-api (Dev Service), helios-web (Dev Service), API Health Check, helios-api (Prod Service), helios-web (Prod Service)
 
 ## Knowledge Gaps
-- **237 isolated node(s):** `environment`, `SessionRow`, `UserRow`, `program`, `DbPluginOptions` (+232 more)
+- **238 isolated node(s):** `docker-entrypoint.sh script`, `environment`, `SessionRow`, `UserRow`, `program` (+233 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `App Side Navigation` connect `plant-detail.ts` to `devices/devices.ts`?**
   _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **Why does `AuthService` connect `lib/index.ts` to `App`?**
+- **Why does `AuthService` connect `AuthService` to `lib/index.ts`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **What connects `environment`, `SessionRow`, `UserRow` to the rest of the system?**
-  _237 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `docker-entrypoint.sh script`, `environment`, `SessionRow` to the rest of the system?**
+  _238 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `growatt-api.service.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.09351256575102279 - nodes in this community are weakly interconnected._
 - **Should `backend/package.json` be split into smaller, more focused modules?**

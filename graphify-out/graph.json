@@ -52,15 +52,45 @@
   },
   "nodes": [
     {
+      "label": "docker-entrypoint.sh",
+      "file_type": "code",
+      "source_file": "backend/docker-entrypoint.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast",
+      "id": "backend_docker_entrypoint",
+      "community": 27,
+      "community_name": "docker-entrypoint.sh",
+      "norm_label": "docker-entrypoint.sh"
+    },
+    {
+      "label": "docker-entrypoint.sh script",
+      "file_type": "code",
+      "source_file": "backend/docker-entrypoint.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast",
+      "id": "backend_docker_entrypoint_sh__entry",
+      "community": 27,
+      "community_name": "docker-entrypoint.sh",
+      "norm_label": "docker-entrypoint.sh script"
+    },
+    {
       "label": "environment.ts",
       "file_type": "code",
       "source_file": "frontend/src/lib/environments/environment.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_lib_environments_environment",
       "community": 16,
       "community_name": "environment.ts",
-      "norm_label": "environment.ts"
+      "norm_label": "environment.ts",
+      "id": "frontend_src_lib_environments_environment"
     },
     {
       "label": "environment",
@@ -68,10 +98,10 @@
       "source_file": "frontend/src/lib/environments/environment.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "frontend_src_lib_environments_environment_environment",
       "community": 16,
       "community_name": "environment.ts",
-      "norm_label": "environment"
+      "norm_label": "environment",
+      "id": "frontend_src_lib_environments_environment_environment"
     },
     {
       "label": "session.ts",
@@ -196,8 +226,8 @@
       "source_file": "backend/src/plugins/db.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 23,
+      "community_name": "plugins/db.ts",
       "norm_label": "plugins/db.ts",
       "id": "backend_src_plugins_db"
     },
@@ -209,8 +239,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 23,
+      "community_name": "plugins/db.ts",
       "norm_label": "dbpluginoptions",
       "id": "backend_src_plugins_db_dbpluginoptions"
     },
@@ -220,8 +250,8 @@
       "source_file": "backend/src/plugins/db.ts",
       "source_location": "L11",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 23,
+      "community_name": "plugins/db.ts",
       "norm_label": "fastify",
       "id": "backend_src_plugins_db_fastify"
     },
@@ -233,8 +263,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 23,
+      "community_name": "plugins/db.ts",
       "norm_label": "fastifyinstance",
       "id": "backend_src_plugins_db_fastifyinstance"
     },
@@ -245,8 +275,8 @@
       "source_location": "L17",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 23,
+      "community_name": "plugins/db.ts",
       "norm_label": "dbpluginfn()",
       "id": "backend_src_plugins_db_dbpluginfn"
     },
@@ -257,8 +287,8 @@
       "source_location": "L43",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 23,
+      "community_name": "plugins/db.ts",
       "norm_label": "runmigrations()",
       "id": "backend_src_plugins_db_runmigrations"
     },
@@ -269,8 +299,8 @@
       "source_location": "L67",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 23,
+      "community_name": "plugins/db.ts",
       "norm_label": "getmigrations()",
       "id": "backend_src_plugins_db_getmigrations"
     },
@@ -280,8 +310,8 @@
       "source_file": "backend/src/plugins/db.ts",
       "source_location": "L130",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 23,
+      "community_name": "plugins/db.ts",
       "norm_label": "dbplugin",
       "id": "backend_src_plugins_db_dbplugin"
     },
@@ -458,8 +488,8 @@
       "source_file": "backend/src/routes/plants.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": "routes/plants.ts",
       "id": "backend_src_routes_plants"
     },
@@ -471,8 +501,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": "plantidparams",
       "id": "backend_src_routes_plants_plantidparams"
     },
@@ -484,8 +514,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": "energyhistoryquery",
       "id": "backend_src_routes_plants_energyhistoryquery"
     },
@@ -507,8 +537,8 @@
       "source_file": "backend/src/services/growatt.service.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": "growatt.service.ts",
       "id": "backend_src_services_growatt_service"
     },
@@ -520,8 +550,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": "growattapiresponse",
       "id": "backend_src_services_growatt_service_growattapiresponse"
     },
@@ -533,8 +563,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": "growattservice",
       "id": "backend_src_services_growatt_service_growattservice"
     },
@@ -545,8 +575,8 @@
       "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": ".constructor()",
       "id": "backend_src_services_growatt_service_growattservice_constructor"
     },
@@ -557,8 +587,8 @@
       "source_location": "L31",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": ".getusertoken()",
       "id": "backend_src_services_growatt_service_growattservice_getusertoken"
     },
@@ -569,8 +599,8 @@
       "source_location": "L44",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": ".fetchfromgrowatt()",
       "id": "backend_src_services_growatt_service_growattservice_fetchfromgrowatt"
     },
@@ -581,8 +611,8 @@
       "source_location": "L87",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": ".request()",
       "id": "backend_src_services_growatt_service_growattservice_request"
     },
@@ -593,8 +623,8 @@
       "source_location": "L126",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": ".clearusercache()",
       "id": "backend_src_services_growatt_service_growattservice_clearusercache"
     },
@@ -606,8 +636,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": "growattserviceerror",
       "id": "backend_src_services_growatt_service_growattserviceerror"
     },
@@ -618,8 +648,8 @@
       "source_location": "L135",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": ".constructor()",
       "id": "backend_src_services_growatt_service_growattserviceerror_constructor"
     },
@@ -739,7 +769,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "app.config.ts",
       "id": "frontend_src_app_app_config"
     },
@@ -750,7 +780,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "appconfig",
       "id": "frontend_src_app_app_config_appconfig"
     },
@@ -761,7 +791,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "app.ts",
       "id": "frontend_src_app_app"
     },
@@ -774,7 +804,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "app",
       "id": "frontend_src_app_app_app"
     },
@@ -785,7 +815,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "component",
       "id": "frontend_src_app_app_ts_component"
     },
@@ -797,7 +827,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".constructor()",
       "id": "frontend_src_app_app_app_constructor"
     },
@@ -809,7 +839,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".ngoninit()",
       "id": "frontend_src_app_app_app_ngoninit"
     },
@@ -821,7 +851,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".togglesidemenu()",
       "id": "frontend_src_app_app_app_togglesidemenu"
     },
@@ -833,7 +863,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".closesidemenu()",
       "id": "frontend_src_app_app_app_closesidemenu"
     },
@@ -845,7 +875,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".toggletheme()",
       "id": "frontend_src_app_app_app_toggletheme"
     },
@@ -857,7 +887,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".togglelanguage()",
       "id": "frontend_src_app_app_app_togglelanguage"
     },
@@ -869,7 +899,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".logout()",
       "id": "frontend_src_app_app_app_logout"
     },
@@ -1445,7 +1475,7 @@
       "source_file": "frontend/src/lib/components/format-number.pipe.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 13,
       "community_name": "lib/index.ts",
       "norm_label": "format-number.pipe.ts",
       "id": "frontend_src_lib_components_format_number_pipe"
@@ -1492,7 +1522,7 @@
       "source_file": "frontend/src/lib/components/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 13,
       "community_name": "lib/index.ts",
       "norm_label": "components/index.ts",
       "id": "frontend_src_lib_components_index"
@@ -1503,7 +1533,7 @@
       "source_file": "frontend/src/lib/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 13,
       "community_name": "lib/index.ts",
       "norm_label": "lib/index.ts",
       "id": "frontend_src_lib_index"
@@ -1515,7 +1545,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "services/index.ts",
       "id": "frontend_src_lib_services_index"
     },
@@ -1526,7 +1556,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "language.service.ts",
       "id": "frontend_src_lib_services_language_language_service"
     },
@@ -1539,7 +1569,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "lang",
       "id": "frontend_src_lib_services_language_language_service_lang"
     },
@@ -1550,7 +1580,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "supported_langs",
       "id": "frontend_src_lib_services_language_language_service_supported_langs"
     },
@@ -1563,7 +1593,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "languageservice",
       "id": "frontend_src_lib_services_language_language_service_languageservice"
     },
@@ -1574,7 +1604,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "injectable",
       "id": "injectable"
     },
@@ -1586,7 +1616,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".init()",
       "id": "frontend_src_lib_services_language_language_service_languageservice_init"
     },
@@ -1598,7 +1628,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".toggle()",
       "id": "frontend_src_lib_services_language_language_service_languageservice_toggle"
     },
@@ -1610,7 +1640,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".setlang()",
       "id": "frontend_src_lib_services_language_language_service_languageservice_setlang"
     },
@@ -1622,7 +1652,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".getstoredlang()",
       "id": "frontend_src_lib_services_language_language_service_languageservice_getstoredlang"
     },
@@ -1634,7 +1664,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".applylang()",
       "id": "frontend_src_lib_services_language_language_service_languageservice_applylang"
     },
@@ -2536,8 +2566,8 @@
       "source_file": "backend/src/plugins/auth.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 19,
+      "community_name": "plugins/auth.ts",
       "norm_label": "plugins/auth.ts",
       "id": "backend_src_plugins_auth"
     },
@@ -2549,8 +2579,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 19,
+      "community_name": "plugins/auth.ts",
       "norm_label": "authpluginoptions",
       "id": "backend_src_plugins_auth_authpluginoptions"
     },
@@ -2560,8 +2590,8 @@
       "source_file": "backend/src/plugins/auth.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 19,
+      "community_name": "plugins/auth.ts",
       "norm_label": "fastify",
       "id": "backend_src_plugins_auth_fastify"
     },
@@ -2573,8 +2603,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 19,
+      "community_name": "plugins/auth.ts",
       "norm_label": "fastifyinstance",
       "id": "backend_src_plugins_auth_fastifyinstance"
     },
@@ -2584,8 +2614,8 @@
       "source_file": "backend/src/plugins/auth.ts",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 19,
+      "community_name": "plugins/auth.ts",
       "norm_label": "@fastify/jwt",
       "id": "backend_src_plugins_auth_fastify_jwt"
     },
@@ -2597,8 +2627,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 19,
+      "community_name": "plugins/auth.ts",
       "norm_label": "fastifyjwt",
       "id": "backend_src_plugins_auth_fastifyjwt"
     },
@@ -2609,8 +2639,8 @@
       "source_location": "L29",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 19,
+      "community_name": "plugins/auth.ts",
       "norm_label": "authpluginfn()",
       "id": "backend_src_plugins_auth_authpluginfn"
     },
@@ -2620,8 +2650,8 @@
       "source_file": "backend/src/plugins/auth.ts",
       "source_location": "L72",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 19,
+      "community_name": "plugins/auth.ts",
       "norm_label": "authplugin",
       "id": "backend_src_plugins_auth_authplugin"
     },
@@ -2631,8 +2661,8 @@
       "source_file": "backend/src/plugins/rate-limit.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 24,
+      "community_name": "rate-limit.ts",
       "norm_label": "rate-limit.ts",
       "id": "backend_src_plugins_rate_limit"
     },
@@ -2644,8 +2674,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 24,
+      "community_name": "rate-limit.ts",
       "norm_label": "ratelimitpluginoptions",
       "id": "backend_src_plugins_rate_limit_ratelimitpluginoptions"
     },
@@ -2656,8 +2686,8 @@
       "source_location": "L10",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 24,
+      "community_name": "rate-limit.ts",
       "norm_label": "ratelimitpluginfn()",
       "id": "backend_src_plugins_rate_limit_ratelimitpluginfn"
     },
@@ -2667,8 +2697,8 @@
       "source_file": "backend/src/plugins/rate-limit.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 24,
+      "community_name": "rate-limit.ts",
       "norm_label": "ratelimitplugin",
       "id": "backend_src_plugins_rate_limit_ratelimitplugin"
     },
@@ -2678,8 +2708,8 @@
       "source_file": "backend/src/plugins/security.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 25,
+      "community_name": "security.ts",
       "norm_label": "security.ts",
       "id": "backend_src_plugins_security"
     },
@@ -2691,8 +2721,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 25,
+      "community_name": "security.ts",
       "norm_label": "securitypluginoptions",
       "id": "backend_src_plugins_security_securitypluginoptions"
     },
@@ -2703,8 +2733,8 @@
       "source_location": "L10",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 25,
+      "community_name": "security.ts",
       "norm_label": "securitypluginfn()",
       "id": "backend_src_plugins_security_securitypluginfn"
     },
@@ -2714,8 +2744,8 @@
       "source_file": "backend/src/plugins/security.ts",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 25,
+      "community_name": "security.ts",
       "norm_label": "securityplugin",
       "id": "backend_src_plugins_security_securityplugin"
     },
@@ -2834,8 +2864,8 @@
       "source_file": "backend/src/utils/crypto.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": "crypto.ts",
       "id": "backend_src_utils_crypto"
     },
@@ -2858,8 +2888,8 @@
       "source_location": "L34",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
-      "community_name": "src/index.ts",
+      "community": 17,
+      "community_name": "routes/plants.ts",
       "norm_label": "decrypt()",
       "id": "backend_src_utils_crypto_decrypt"
     },
@@ -4758,7 +4788,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "app.routes.ts",
       "id": "frontend_src_app_app_routes"
     },
@@ -4769,7 +4799,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "routes",
       "id": "frontend_src_app_app_routes_routes"
     },
@@ -4780,7 +4810,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "login.ts",
       "id": "frontend_src_app_pages_login_login"
     },
@@ -4793,7 +4823,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "login",
       "id": "frontend_src_app_pages_login_login_login"
     },
@@ -4804,7 +4834,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "component",
       "id": "frontend_src_app_pages_login_login_ts_component"
     },
@@ -4816,7 +4846,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": ".onsubmit()",
       "id": "frontend_src_app_pages_login_login_login_onsubmit"
     },
@@ -4827,7 +4857,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "register.ts",
       "id": "frontend_src_app_pages_register_register"
     },
@@ -4840,7 +4870,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "register",
       "id": "frontend_src_app_pages_register_register_register"
     },
@@ -4851,7 +4881,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "component",
       "id": "frontend_src_app_pages_register_register_ts_component"
     },
@@ -4863,7 +4893,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": ".onsubmit()",
       "id": "frontend_src_app_pages_register_register_register_onsubmit"
     },
@@ -4963,7 +4993,7 @@
       "source_file": "frontend/src/lib/environments/index.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 18,
+      "community": 13,
       "community_name": "lib/index.ts",
       "norm_label": "environments/index.ts",
       "id": "frontend_src_lib_environments_index"
@@ -4975,7 +5005,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "auth.guard.ts",
       "id": "frontend_src_lib_services_auth_auth_guard"
     },
@@ -4987,7 +5017,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "authguard()",
       "id": "frontend_src_lib_services_auth_auth_guard_authguard"
     },
@@ -4999,7 +5029,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "guestguard()",
       "id": "frontend_src_lib_services_auth_auth_guard_guestguard"
     },
@@ -5010,7 +5040,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "auth.service.ts",
       "id": "frontend_src_lib_services_auth_auth_service"
     },
@@ -5023,7 +5053,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "authuser",
       "id": "frontend_src_lib_services_auth_auth_service_authuser"
     },
@@ -5036,7 +5066,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "authresponse",
       "id": "frontend_src_lib_services_auth_auth_service_authresponse"
     },
@@ -5049,7 +5079,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "registerpayload",
       "id": "frontend_src_lib_services_auth_auth_service_registerpayload"
     },
@@ -5062,7 +5092,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "loginpayload",
       "id": "frontend_src_lib_services_auth_auth_service_loginpayload"
     },
@@ -5075,7 +5105,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "authservice",
       "id": "frontend_src_lib_services_auth_auth_service_authservice"
     },
@@ -5086,7 +5116,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "injectable",
       "id": "frontend_src_lib_services_auth_auth_service_ts_injectable"
     },
@@ -5098,7 +5128,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": ".loaduserfromstorage()",
       "id": "frontend_src_lib_services_auth_auth_service_authservice_loaduserfromstorage"
     },
@@ -5110,7 +5140,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": ".gettoken()",
       "id": "frontend_src_lib_services_auth_auth_service_authservice_gettoken"
     },
@@ -5122,7 +5152,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": ".register()",
       "id": "frontend_src_lib_services_auth_auth_service_authservice_register"
     },
@@ -5134,7 +5164,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": ".login()",
       "id": "frontend_src_lib_services_auth_auth_service_authservice_login"
     },
@@ -5146,7 +5176,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": ".logout()",
       "id": "frontend_src_lib_services_auth_auth_service_authservice_logout"
     },
@@ -5158,7 +5188,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": ".handlesessionrevoked()",
       "id": "frontend_src_lib_services_auth_auth_service_authservice_handlesessionrevoked"
     },
@@ -5170,7 +5200,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": ".handleauthsuccess()",
       "id": "frontend_src_lib_services_auth_auth_service_authservice_handleauthsuccess"
     },
@@ -5181,7 +5211,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "auth.interceptor.ts",
       "id": "frontend_src_lib_services_growatt_auth_interceptor"
     },
@@ -5193,7 +5223,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "authinterceptor()",
       "id": "frontend_src_lib_services_growatt_auth_interceptor_authinterceptor"
     },
@@ -5516,7 +5546,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "storage.service.ts",
       "id": "frontend_src_lib_services_storage_storage_service"
     },
@@ -5529,7 +5559,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "storageservice",
       "id": "frontend_src_lib_services_storage_storage_service_storageservice"
     },
@@ -5540,7 +5570,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "injectable",
       "id": "frontend_src_lib_services_storage_storage_service_ts_injectable"
     },
@@ -5552,7 +5582,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".get()",
       "id": "frontend_src_lib_services_storage_storage_service_storageservice_get"
     },
@@ -5564,7 +5594,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".set()",
       "id": "frontend_src_lib_services_storage_storage_service_storageservice_set"
     },
@@ -5576,7 +5606,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".remove()",
       "id": "frontend_src_lib_services_storage_storage_service_storageservice_remove"
     },
@@ -5588,7 +5618,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".clear()",
       "id": "frontend_src_lib_services_storage_storage_service_storageservice_clear"
     },
@@ -5599,7 +5629,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "theme.service.ts",
       "id": "frontend_src_lib_services_theme_theme_service"
     },
@@ -5612,7 +5642,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "theme",
       "id": "frontend_src_lib_services_theme_theme_service_theme"
     },
@@ -5625,7 +5655,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "themeservice",
       "id": "frontend_src_lib_services_theme_theme_service_themeservice"
     },
@@ -5636,7 +5666,7 @@
       "source_location": "",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "injectable",
       "id": "frontend_src_lib_services_theme_theme_service_ts_injectable"
     },
@@ -5648,7 +5678,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".init()",
       "id": "frontend_src_lib_services_theme_theme_service_themeservice_init"
     },
@@ -5660,7 +5690,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".toggle()",
       "id": "frontend_src_lib_services_theme_theme_service_themeservice_toggle"
     },
@@ -5672,7 +5702,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": ".applytheme()",
       "id": "frontend_src_lib_services_theme_theme_service_themeservice_applytheme"
     },
@@ -6038,7 +6068,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "community": 13,
-      "community_name": "App",
+      "community_name": "lib/index.ts",
       "norm_label": "main.ts",
       "id": "frontend_src_main"
     },
@@ -6448,7 +6478,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "helios project overview",
       "_origin": "semantic",
       "id": "readme_helios_project"
@@ -6463,7 +6493,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "helios architecture",
       "_origin": "semantic",
       "id": "readme_architecture"
@@ -6478,7 +6508,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "docker compose infrastructure",
       "_origin": "semantic",
       "id": "readme_docker_compose_infra"
@@ -6494,7 +6524,7 @@
       "contributor": null,
       "rationale": "Token revog\u00e1vel via CLI admin \u2014 chosen for revocable token management",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "jwt + bcrypt authentication",
       "_origin": "semantic",
       "id": "readme_jwt_auth"
@@ -6541,7 +6571,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "growatt open api v1",
       "_origin": "semantic",
       "id": "readme_growatt_api"
@@ -6631,7 +6661,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "admin cli documentation",
       "_origin": "semantic",
       "id": "docs_admin_cli"
@@ -6646,7 +6676,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "cli user commands",
       "_origin": "semantic",
       "id": "docs_admin_user_commands"
@@ -6661,7 +6691,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "cli invite commands",
       "_origin": "semantic",
       "id": "docs_admin_invite_commands"
@@ -6676,7 +6706,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "cli session commands",
       "_origin": "semantic",
       "id": "docs_admin_session_commands"
@@ -6691,7 +6721,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "api reference documentation",
       "_origin": "semantic",
       "id": "docs_api_reference"
@@ -6706,7 +6736,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "auth endpoints",
       "_origin": "semantic",
       "id": "docs_api_auth_endpoints"
@@ -6721,7 +6751,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "plants endpoints",
       "_origin": "semantic",
       "id": "docs_api_plants_endpoints"
@@ -6736,7 +6766,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "devices endpoints",
       "_origin": "semantic",
       "id": "docs_api_devices_endpoints"
@@ -6752,7 +6782,7 @@
       "contributor": null,
       "rationale": "Cache Growatt responses for 5 minutes per user; return expired cache on Growatt rate limit (10012)",
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "api cache strategy",
       "_origin": "semantic",
       "id": "docs_api_cache"
@@ -6767,7 +6797,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "deploy documentation",
       "_origin": "semantic",
       "id": "docs_deploy"
@@ -6782,7 +6812,7 @@
       "author": null,
       "contributor": null,
       "community": 18,
-      "community_name": "lib/index.ts",
+      "community_name": "AuthService",
       "norm_label": "setup documentation",
       "_origin": "semantic",
       "id": "docs_setup"
@@ -6837,13 +6867,24 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "backend/docker-entrypoint.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "backend_docker_entrypoint",
+      "target": "backend_docker_entrypoint_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "frontend/src/lib/environments/environment.ts",
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "frontend_src_lib_environments_environment",
-      "target": "frontend_src_lib_environments_environment_environment",
-      "confidence_score": 1.0
+      "target": "frontend_src_lib_environments_environment_environment"
     },
     {
       "relation": "contains",
@@ -15813,5 +15854,5 @@
       "source_file": "docker-compose.yml"
     }
   ],
-  "built_at_commit": "a1ddc9a5148be11c65204a66dcf3a94a1a79d52c"
+  "built_at_commit": "340b51a386c6edfa8272df471c3d64641aaf5caa"
 }
