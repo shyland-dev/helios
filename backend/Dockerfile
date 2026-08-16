@@ -24,8 +24,8 @@ RUN npm run build
 # ─── Estágio 2: Produção ──────────────────────────────────────────────────────
 FROM node:24-alpine AS production
 
-# Dependências para native addons (better-sqlite3, bcrypt)
-RUN apk add --no-cache python3 make g++
+# Dependências para native addons (better-sqlite3, bcrypt) + su-exec para entrypoint
+RUN apk add --no-cache python3 make g++ su-exec
 
 WORKDIR /app
 
@@ -40,10 +40,11 @@ RUN npm ci --omit=dev && \
 COPY --from=builder /app/dist/ ./dist/
 
 # Criar diretório de dados
-RUN mkdir -p /app/data && chown -R node:node /app/data
+RUN mkdir -p /app/data
 
-# Rodar como usuário não-root
-USER node
+# Copiar entrypoint
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Variáveis padrão
 ENV HELIOS_DB_PATH=/app/data/helios.db
@@ -57,4 +58,5 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
   CMD wget -qO- http://127.0.0.1:3000/api/health || exit 1
 
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["node", "dist/src/index.js"]
