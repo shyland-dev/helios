@@ -54,7 +54,6 @@ frontend/node_modules/
 frontend/coverage/
 frontend/public/assets/version.json
 frontend/src/lib/environments/version.ts
-frontend/src/lib/environments/environment.ts
 
 # Backend specifics
 backend/node_modules/
