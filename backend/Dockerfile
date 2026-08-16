@@ -1,8 +1,27 @@
 # ═══════════════════════════════════════════════════════════════════════════════
-# Helios Backend — Node.js Alpine
+# Helios Backend — Multi-stage Build
 # Suporta multi-arch: ARM64 (Raspberry Pi) + AMD64 (dev)
 # ═══════════════════════════════════════════════════════════════════════════════
 
+# ─── Estágio 1: Build ─────────────────────────────────────────────────────────
+FROM node:24-alpine AS builder
+
+# Dependências para native addons (better-sqlite3, bcrypt)
+RUN apk add --no-cache python3 make g++
+
+WORKDIR /app
+
+# Instalar todas as dependências (inclui devDependencies para compilar)
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Copiar código fonte e compilar
+COPY tsconfig.json ./
+COPY src/ ./src/
+COPY cli/ ./cli/
+RUN npm run build
+
+# ─── Estágio 2: Produção ──────────────────────────────────────────────────────
 FROM node:24-alpine AS production
 
 # Dependências para native addons (better-sqlite3, bcrypt)
@@ -10,15 +29,15 @@ RUN apk add --no-cache python3 make g++
 
 WORKDIR /app
 
-# Instalar dependências (cache layer)
+# Instalar apenas dependências de produção
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && \
     # Limpar cache e build tools após instalação
     apk del python3 make g++ && \
     rm -rf /root/.npm /tmp/*
 
-# Copiar código compilado
-COPY dist/ ./dist/
+# Copiar código compilado do estágio builder
+COPY --from=builder /app/dist/ ./dist/
 
 # Criar diretório de dados
 RUN mkdir -p /app/data && chown -R node:node /app/data
