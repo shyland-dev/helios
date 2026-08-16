@@ -1,16 +1,16 @@
 # Graph Report - helios  (2026-08-15)
 
 ## Corpus Check
-- 70 files · ~15,672 words
+- 71 files · ~15,694 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 578 nodes · 781 edges · 32 communities (24 shown, 8 thin omitted)
+- 580 nodes · 782 edges · 28 communities (22 shown, 6 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 24 edges (avg confidence: 0.77)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9318e0d7`
+- Built from commit: `a1ddc9a5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,21 +28,17 @@
 - scripts
 - cli/index.ts
 - devices/devices.ts
-- StorageService
+- App
 - routes/auth.ts
 - src/index.ts
-- auth.service.ts
-- LanguageService
-- AuthService
-- App
+- environment.ts
+- lib/index.ts
 - tsconfig.app.json
 - CacheService
 - sync-version.mjs
 - load-env.mjs
-- app.config.ts
 - helios-api (Prod Service)
-- ThemeService
-- lib/index.ts
+- api-error-codes.const.ts
 - App Root Layout
 - Fastify Backend Choice
 - SQLite Database Choice
@@ -64,12 +60,12 @@
   docker-compose.yml → docker-compose.dev.yml
 - `helios-api (Prod Service)` --semantically_similar_to--> `helios-api (Dev Service)`  [INFERRED] [semantically similar]
   docker-compose.yml → docker-compose.dev.yml
-- `Helios Project Overview` --references--> `Admin CLI Documentation`  [EXTRACTED]
-  README.md → docs/ADMIN.md
 - `Deploy Documentation` --conceptually_related_to--> `Docker Compose Infrastructure`  [INFERRED]
   docs/DEPLOY.md → README.md
 - `CLI Session Commands` --conceptually_related_to--> `JWT + bcrypt Authentication`  [INFERRED]
   docs/ADMIN.md → README.md
+- `main()` --indirect_call--> `authRoutes()`  [INFERRED]
+  backend/src/index.ts → backend/src/routes/auth.ts
 
 ## Import Cycles
 - None detected.
@@ -79,10 +75,10 @@
 - **Solar Monitoring UI Pages** — frontend_src_app_pages_dashboard_dashboard, frontend_src_app_pages_plants_plants, frontend_src_app_pages_plants_plant_detail_plant_detail, frontend_src_app_pages_devices_devices, frontend_src_app_pages_devices_device_detail_device_detail [INFERRED 0.85]
 - **Docker Deployment Configuration** — docker_compose_helios_web, docker_compose_helios_api, docker_compose_dev_helios_web, docker_compose_dev_helios_api, readme_docker_compose_infra [EXTRACTED 1.00]
 
-## Communities (32 total, 8 thin omitted)
+## Communities (28 total, 6 thin omitted)
 
 ### Community 0 - "growatt-api.service.ts"
-Cohesion: 0.10
+Cohesion: 0.09
 Nodes (28): API_ENDPOINTS, DEVICE_TYPE_LABELS, CacheEntry, GrowattApiService, Injectable, ApiResponse, DeviceEnergyHistoryParams, EnergyHistoryParams (+20 more)
 
 ### Community 1 - "backend/package.json"
@@ -130,12 +126,12 @@ Cohesion: 0.16
 Nodes (13): InviteRow, registerInviteCommands(), UserRow, registerSessionCommands(), SessionRow, registerUserCommands(), UserRow, openDb() (+5 more)
 
 ### Community 12 - "devices/devices.ts"
-Cohesion: 0.08
-Nodes (23): API Cache Strategy, Devices Endpoints, Plants Endpoints, API Reference Documentation, Deploy Documentation, Setup Documentation, DataCard, DetailResponse (+15 more)
+Cohesion: 0.12
+Nodes (13): DataCard, DetailResponse, DeviceDetail, EnergyResponse, MinDetail, Component, Device, Devices (+5 more)
 
-### Community 13 - "StorageService"
-Cohesion: 0.21
-Nodes (5): Lang, SUPPORTED_LANGS, StorageService, Injectable, Theme
+### Community 13 - "App"
+Cohesion: 0.06
+Nodes (20): App, appConfig, routes, Component, authGuard(), guestGuard(), AuthResponse, AuthUser (+12 more)
 
 ### Community 14 - "routes/auth.ts"
 Cohesion: 0.15
@@ -145,13 +141,9 @@ Nodes (8): authRoutes(), LoginBody, loginSchema, RegisterBody, registerSchema, U
 Cohesion: 0.06
 Nodes (33): AppConfig, loadConfig(), optionalEnv(), requireEnv(), main(), authPlugin, AuthPluginOptions, fastify (+25 more)
 
-### Community 16 - "auth.service.ts"
-Cohesion: 0.29
-Nodes (5): AuthResponse, AuthUser, LoginPayload, RegisterPayload, authInterceptor()
-
-### Community 18 - "AuthService"
-Cohesion: 0.11
-Nodes (12): Admin CLI Documentation, CLI Invite Commands, CLI Session Commands, CLI User Commands, Auth Endpoints, Login, Component, Register (+4 more)
+### Community 18 - "lib/index.ts"
+Cohesion: 0.07
+Nodes (22): Admin CLI Documentation, CLI Invite Commands, CLI Session Commands, CLI User Commands, Auth Endpoints, API Cache Strategy, Devices Endpoints, Plants Endpoints (+14 more)
 
 ### Community 20 - "tsconfig.app.json"
 Cohesion: 0.20
@@ -165,30 +157,26 @@ Nodes (8): assertVersion(), main(), paths, readJson(), rootDir, syncPackageLockV
 Cohesion: 0.33
 Nodes (4): environmentTsPath, envPath, envPathMonorepo, rootDir
 
-### Community 27 - "app.config.ts"
-Cohesion: 0.36
-Nodes (4): appConfig, routes, authGuard(), guestGuard()
-
 ### Community 28 - "helios-api (Prod Service)"
 Cohesion: 0.50
 Nodes (5): helios-api (Dev Service), helios-web (Dev Service), API Health Check, helios-api (Prod Service), helios-web (Prod Service)
 
 ## Knowledge Gaps
-- **236 isolated node(s):** `SessionRow`, `UserRow`, `program`, `DbPluginOptions`, `fastify` (+231 more)
+- **237 isolated node(s):** `environment`, `SessionRow`, `UserRow`, `program`, `DbPluginOptions` (+232 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `App Side Navigation` connect `plant-detail.ts` to `devices/devices.ts`?**
   _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **Why does `AuthService` connect `AuthService` to `auth.service.ts`, `app.config.ts`?**
+- **Why does `AuthService` connect `lib/index.ts` to `App`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **What connects `SessionRow`, `UserRow`, `program` to the rest of the system?**
-  _236 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `environment`, `SessionRow`, `UserRow` to the rest of the system?**
+  _237 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `growatt-api.service.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.0955837870538415 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09351256575102279 - nodes in this community are weakly interconnected._
 - **Should `backend/package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._
 - **Should `options` be split into smaller, more focused modules?**
